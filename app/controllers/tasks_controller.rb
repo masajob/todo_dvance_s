@@ -1,7 +1,6 @@
 class TasksController < ApplicationController
   def index
-    # @task = Task.all
-    @task = { sample: "hello", test: "world" }
+    @task = Task.all
     render json: @task
   end
 end

@@ -1,7 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+tasks = [
+  { name: "設計", explanation: "意見をヒアリングして、設計に入ります。", deadline_date: "2020-08-30", status: 1 },
+  { name: "実装", explanation: "設計をエンジニアに伝達し、作成に入ります。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:2 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:3 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:4 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:4 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:4 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:4 },
+  { name: "本番テスト", explanation: "作成したアプリをチェックします。", deadline_date: "2020-08-30", status:4 },
+  
+]
+
+ActiveRecord::Base.transaction do
+  tasks.each do |task|
+    Task.create(task)
+  end
+end

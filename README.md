@@ -1,25 +1,16 @@
-# README
+## DB設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## tasks table
 
-Things you may want to cover:
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| id(PK)        | default | null: false |
+| name          | string  | null: false |
+| explanation   | string  | null: false |
+| deadline_date | date    | null: false |
+| status        | string  | null: false |
+| timestamps    | string  | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# todo_dvance_s
+<!-- * has_many :items -->
