@@ -5,6 +5,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
       t.string :explanation
       t.date :deadline_date
       t.integer :status
+      t.references :genre, foreign_key: true
       t.timestamps
     end
   end
