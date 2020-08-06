@@ -7,5 +7,6 @@ class Task < ApplicationRecord
   #   check: 4,
   #   done: 5,
   # }
+  has_one_attached :image
   belongs_to :genre
 end

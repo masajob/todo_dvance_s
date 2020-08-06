@@ -2,16 +2,17 @@ class GenresController < ApplicationController
   before_action :select_genre, only: [:destroy]
 
   def index
-    genres = Genre.all
-    render json: genres
+    genres_all
   end
 
   def create
     Genre.create(genre_params)
+    genres_all
   end
 
   def destroy
     @genre.destroy
+    genres_all
   end
 
   private
@@ -22,5 +23,10 @@ class GenresController < ApplicationController
 
   def select_genre
     @genre = Genre.find(params[:id])
+  end
+
+  def genres_all
+    genres = Genre.all
+    render json: genres
   end
 end

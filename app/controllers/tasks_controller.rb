@@ -2,34 +2,41 @@ class TasksController < ApplicationController
   before_action :select_task, only: [:update, :destroy, :update_status]
 
   def index
-    tasks = Task.all
-    render json: tasks
+    tasks_all
   end
 
   def create
-    Task.create(task_params)
+    @result = Task.create(task_params)
+    tasks_all
   end
 
   def update
     @task.update(task_params)
+    tasks_all
   end
 
   def destroy
     @task.destroy
+    tasks_all
   end
 
   def update_status
-    @task.update(status: params[:genre])
+    @task.update(status: params[:status])
+    tasks_all
   end
 
   private
 
   def task_params
-    # params.require(:task).permit(:name, :image, :genre, :explanation)
-    params.require(:task).permit(:name, :explanation, :genre_id).merge(status: 0, deadline_date: "2020-09-30")
+    params.permit(:name, :explanation, :genre_id, :deadline_date, :status)
   end
 
   def select_task
     @task = Task.find(params[:id])
+  end
+
+  def tasks_all
+    tasks = Task.all
+    render json: tasks
   end
 end
