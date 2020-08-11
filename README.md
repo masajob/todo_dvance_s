@@ -1,4 +1,19 @@
-## DB設計
+# メモ
+
+※詳しくは[https://github.com/masajob/todo_advance_r/pull/5]の readme を確認してください。
+
+```bash
+docker-compose build
+docker-compose up
+
+docker ps
+-> id確認する
+
+docker exec -it <id> /bin/bash
+rails db:create db:migrate
+```
+
+## DB 設計
 
 ## genres table
 
@@ -34,7 +49,7 @@ belongs_to :genre
 | number | explanation  |
 | ------ | ------------ |
 | 0      | ToDo         |
-| 1      | Pendding     |
+| 1      | Pending      |
 | 2      | Doing(Today) |
 | 3      | WIP          |
 | 4      | Check        |

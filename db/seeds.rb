@@ -20,7 +20,6 @@ tasks = [
 ]
 
 genres=[
-  {name:"すべて"},
   {name:"sample株式会社"},
   {name:"test合同会社"},
   {name:"tanaka有限会社"},
