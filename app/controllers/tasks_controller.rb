@@ -28,7 +28,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.permit(:name, :explanation, :image, :genre_id, :deadline_date, :status)
+    params.permit(:name, :explanation, :genre_id, :deadline_date, :status)
   end
 
   def select_task
