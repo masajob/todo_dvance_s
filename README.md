@@ -1,25 +1,56 @@
-# README
+# メモ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+※詳しくは[https://github.com/masajob/todo_advance_r/pull/5]の readme を確認してください。
 
-Things you may want to cover:
+```bash
+docker-compose build
+docker-compose up
 
-* Ruby version
+docker ps
+-> id確認する
 
-* System dependencies
+docker exec -it <id> /bin/bash
+rails db:create db:migrate
+```
 
-* Configuration
+## DB 設計
 
-* Database creation
+## genres table
 
-* Database initialization
+| Column | Type    | Options     |
+| ------ | ------- | ----------- |
+| id(PK) | default | null: false |
+| name   | string  | null: false |
 
-* How to run the test suite
+### Association
 
-* Services (job queues, cache servers, search engines, etc.)
+has_many :tasks
 
-* Deployment instructions
+## tasks table
 
-* ...
-# todo_dvance_s
+| Column        | Type    | Options     |
+| ------------- | ------- | ----------- |
+| id(PK)        | default | null: false |
+| name          | string  | null: false |
+| explanation   | string  | null: false |
+| deadline_date | date    | null: false |
+| status        | string  | null: false |
+| timestamps    | string  | null: false |
+| genre_id(FK)  | integer | null: false |
+
+### Association
+
+belongs_to :genre
+
+## 列挙型
+
+### task status
+
+| number | explanation  |
+| ------ | ------------ |
+| 0      | ToDo         |
+| 1      | Pending      |
+| 2      | Doing(Today) |
+| 3      | WIP          |
+| 4      | Check        |
+| 5      | Done         |
