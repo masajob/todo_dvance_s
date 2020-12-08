@@ -1,6 +1,6 @@
 # メモ
 
-※詳しくは[https://github.com/masajob/todo_advance_r/pull/5]の readme を確認してください。
+※詳しくは[https://github.com/masajob/todo_advance_r/pull/5] のreadme を確認してください。
 
 ```bash
 docker-compose build
